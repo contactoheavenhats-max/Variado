@@ -1,0 +1,2 @@
+(function(){const footer=()=>{const footerDetails=document.querySelectorAll(".footer .accordion details");footerDetails.forEach(targetDetail=>{targetDetail.addEventListener("click",()=>{footerDetails.forEach(detail=>{detail!==targetDetail&&detail.removeAttribute("open")})})})};document.addEventListener("shopify:section:load",footer),footer()})();
+//# sourceMappingURL=/cdn/shop/t/24/assets/footer.js.map?v=165087705245998384191790635545

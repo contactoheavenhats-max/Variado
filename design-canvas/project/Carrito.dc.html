@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Carrito drawer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Rock+Salt&display=swap" rel="stylesheet">
+<style>
+a.cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;background:linear-gradient(180deg,#ffe29a 0%,#f0b860 48%,#b87a2c 100%);color:#1a0f06;font-weight:500;border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 28px rgba(240,184,96,.35),0 3px 0 #7a4a14;transition:transform .15s,box-shadow .15s}
+a.cta:hover{opacity:1;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 14px 34px rgba(240,184,96,.5),0 3px 0 #7a4a14}
+a.cta:active{transform:translateY(1px);box-shadow:0 2px 0 #7a4a14}
+button.cta-o{border-radius:999px!important;transition:background .15s,color .15s}
+button.cta-o:hover{background:#f0b860!important;color:#1a0f06!important}
+body{margin:0;font-family:'Roboto Mono',monospace}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.75}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;position:relative;overflow:hidden;background:#1a1410">
+<img src="/_blob/6c8234b802d32d59e88dd341f6c01fc0" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<div style="position:absolute;inset:0;background:rgba(0,0,0,.6)"></div>
+
+<aside aria-label="Carrito" style="position:absolute;top:0;right:0;bottom:0;width:480px;background:linear-gradient(180deg,#0b0705 0%,#2a1a0e 45%,#6b4421 100%);color:#f5ead6;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:1px solid rgba(240,184,96,.3)">
+<div style="font-size:16px;letter-spacing:2px">CARRITO ({{count}})</div>
+<a href="Main.dc.html" aria-label="Cerrar carrito" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f5ead6" stroke-width="1.8" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></a>
+</div>
+
+<div style="flex-grow:1;overflow:auto;padding:24px 28px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:16px">
+<img src="/_blob/8c4b31859b619158294a17245f6e43c5" alt="Gorra Tucanes" style="width:104px;height:104px;object-fit:cover;background:rgba(255,255,255,.07)">
+<div style="flex-grow:1;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px"><span>GORRA TUCANES</span><span>${{total}}</span></div>
+<div style="font-size:12px;color:#c9b28a">Edición limitada</div>
+<div style="display:flex;align-items:center;gap:4px">
+<button onClick="{{dec}}" aria-label="Quitar uno" style="width:44px;height:44px;border:1px solid rgba(240,184,96,.5);background:transparent;color:#f5ead6;font-size:18px">−</button>
+<div style="width:44px;text-align:center;font-size:14px">{{qty}}</div>
+<button onClick="{{inc}}" aria-label="Agregar uno" style="width:44px;height:44px;border:1px solid rgba(240,184,96,.5);background:transparent;color:#f5ead6;font-size:18px">+</button>
+</div>
+</div>
+</div>
+
+<div style="border-top:1px solid rgba(240,184,96,.3);padding-top:20px;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:12px;letter-spacing:2px;color:#f0b860">COMPLETA TU PEDIDO</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px"><span>[UPSELL · PAREJA]</span><button class="cta-o" style="border:1px solid #f0b860;background:transparent;color:#f0b860;padding:10px 16px;font-size:12px;letter-spacing:1px;min-height:44px">AGREGAR</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px"><span>[UPSELL · TRÍO]</span><button class="cta-o" style="border:1px solid #f0b860;background:transparent;color:#f0b860;padding:10px 16px;font-size:12px;letter-spacing:1px;min-height:44px">AGREGAR</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px"><span>[ONLY THE BEST]</span><button class="cta-o" style="border:1px solid #f0b860;background:transparent;color:#f0b860;padding:10px 16px;font-size:12px;letter-spacing:1px;min-height:44px">AGREGAR</button></div>
+</div>
+</div>
+
+<div style="padding:24px 28px;border-top:1px solid rgba(240,184,96,.3);display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;font-size:15px"><span>SUBTOTAL</span><span>${{total}}</span></div>
+<div style="font-size:12px;color:#c9b28a">Envío e impuestos calculados en el checkout.</div>
+<a class="cta" href="#" style="padding:20px 24px;font-size:15px;letter-spacing:2px;min-height:44px;box-sizing:border-box;width:100%">FINALIZAR COMPRA <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a0f06" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+</div>
+</aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"price":{"editor":"int","default":999,"min":0,"max":9999,"step":1},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+state = { qty: 1 };
+renderVals() {
+const price = this.props.price ?? 999;
+const qty = this.state.qty;
+return {
+qty,
+count: qty,
+total: (price * qty).toFixed(2),
+inc: () => this.setState({ qty: qty + 1 }),
+dec: () => this.setState({ qty: Math.max(1, qty - 1) }),
+};
+}
+}
+</script>
+</body>
+</html>

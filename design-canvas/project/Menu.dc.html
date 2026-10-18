@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Menú abierto</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Rock+Salt&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Roboto Mono',monospace}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.7}
+</style>
+</helmet>
+<div style="width:1440px;height:620px;box-sizing:border-box;background:linear-gradient(180deg,#0b0705 0%,#2a1a0e 45%,#6b4421 100%);color:#f5ead6;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid rgba(240,184,96,.3)">
+<a href="Main.dc.html" aria-label="Cerrar menú" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></a>
+<img src="/_blob/18ff323b9ff06a6cef1177468b2d20c0" alt="JC Hats" style="height:34px">
+<a href="Carrito.dc.html" aria-label="Carrito" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg></a>
+</div>
+<div style="flex-grow:1;display:flex;flex-wrap:wrap;gap:64px;padding:56px 48px">
+<div style="flex:1 1 360px;display:flex;flex-direction:column;gap:22px;font-size:22px;letter-spacing:1px">
+<a href="Main.dc.html">GORRA TUCANES</a>
+<a href="#">TODO LO DISPONIBLE</a>
+<a href="#">COLABORACIONES</a>
+<a href="#">JC SHIRTS</a>
+<a href="#">ACCESORIOS</a>
+</div>
+<div style="flex:1 1 280px;display:flex;flex-direction:column;gap:16px;font-size:14px;color:#bbb">
+<div style="font-size:12px;letter-spacing:2px;color:#777">COLECCIONES</div>
+<a href="#">LEVEL UP</a><a href="#">11° ANIVERSARIO</a><a href="#">NOT THE SAME</a><a href="#">JC CLUB</a><a href="#">JC FLOW LEGACY</a>
+</div>
+<div style="flex:1 1 280px;display:flex;flex-direction:column;gap:16px;font-size:14px;color:#bbb">
+<div style="font-size:12px;letter-spacing:2px;color:#777">ACCESORIOS</div>
+<a href="#">CAP CARRIER</a><a href="#">CURVE BAND</a><a href="#">JC BRUSH</a><a href="#">PINES</a>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":620}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

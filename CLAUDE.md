@@ -3,6 +3,13 @@
 Contexto completo para continuar en otra sesión (laptop, desktop app o web). Lee todo esto antes de trabajar.
 Idioma de trabajo: español. Cliente: JC Hats México (contacto.heavenhats@gmail.com).
 
+## ACTUALIZACIÓN (oct 2026) — LEER PRIMERO
+- **La web real es el tema de Shopify de JC Hats** y se modifica **en local con Shopify CLI** (`shopify theme dev` para vista previa, `shopify theme push --theme <ID de la copia>` para subir). Siempre sobre una **copia sin publicar**, nunca el tema publicado. Hacer `git commit` tras cada cambio que funcione.
+- **No se construye la web de los diseños tal cual.** Los diseños son **referencia**: se van tomando elementos sueltos cuando el cliente lo pida. Ver `design-reference/README.md` (capturas, código fuente y lista de piezas).
+- **Base visual elegida: la variante negra** (fondo negro, elementos blancos, resaltes azules `#0202ba`). **La variante café (gradiente de la gira) queda descartada**; las notas de más abajo sobre el gradiente café y el dorado son historial.
+- Las variantes verde, azul y blancas solo existieron en el artifact y no se usan.
+- Accesos: el CLI debe iniciar sesión con la cuenta personal a la que JC Hats dio acceso (`shopify auth logout` si entra con otra cuenta, p. ej. la de Heaven). Si el acceso es de colaborador sin permiso de Temas, usar la app **Theme Access** con `--password`.
+
 ## Qué es
 Web de lanzamiento (Shopify) de **una sola gorra Total Black** en colaboración con **Los Tucanes de Tijuana** (gira "Tucanes Time Tour 2026"). Diseño **móvil primero**.
 Rama de trabajo: `claude/jc-hats-tucanes-transcription-qwgdqw` (repo `contactoheavenhats-max/Variado`). No crear PR si no se pide.

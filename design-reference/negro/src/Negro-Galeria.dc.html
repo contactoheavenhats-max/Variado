@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Galería de la gorra · Negro</title>
+<!-- runtime del canvas (support.js) no incluido: estos archivos son referencia de diseño -->
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0;background:#000000}
+button{cursor:pointer}
+.gbg{position:relative;isolation:isolate;overflow:hidden;background:#111114}
+.gbg::before{content:"";position:absolute;inset:-35%;z-index:0;background:radial-gradient(circle at 32% 30%,#ffffff 0,rgba(255,255,255,0.0) 42%),radial-gradient(circle at 72% 72%,#ffffff 0,rgba(255,255,255,0) 50%),linear-gradient(160deg,#f4f4f6 0%,#d9d9df 55%,#b9b9c4 100%)}
+.gbg img{position:relative;z-index:1;mix-blend-mode:multiply}
+@keyframes drift{from{transform:translate(-6%,-4%) rotate(0deg) scale(1)}to{transform:translate(6%,5%) rotate(28deg) scale(1.12)}}
+</style>
+</helmet>
+<div style="width:390px;height:441px;box-sizing:border-box;padding:8px 16px 0;background:#000000">
+<div class="gbg" style="aspect-ratio:1/1;border-radius:18px">
+<img src="{{mainImg}}" alt="Gorra Tucanes Total Black" style="width:100%;height:100%;object-fit:contain;display:block">
+<div style="position:absolute;z-index:2;top:12px;left:12px;background:#0202ba;color:#ffffff;font-size:10px;letter-spacing:2px;padding:7px 12px;border-radius:999px">EDICIÓN LIMITADA</div>
+</div>
+<div style="display:flex;gap:8px;margin-top:10px">
+<sc-for list="{{thumbs}}" as="t" hint-placeholder-count="5">
+<button class="gbg" onClick="{{t.pick}}" aria-label="Ver foto {{t.n}}" style="flex:1 1 0;min-width:0;aspect-ratio:1/1;padding:0;border-radius:10px;border:2px solid {{t.ring}}"><img src="{{t.src}}" alt="" style="width:100%;height:100%;object-fit:contain;display:block"></button>
+</sc-for>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":441}}'>
+class Component extends DCLogic {
+state = { img: 0 };
+renderVals() {
+const imgs = ['../../../design-canvas/assets/1_95.jpg','../../../design-canvas/assets/2-2026-08-14T113841.614.jpg','../../../design-canvas/assets/3_99.jpg','../../../design-canvas/assets/4_92.jpg','../../../design-canvas/assets/5_93.jpg'];
+return {
+mainImg: imgs[this.state.img],
+thumbs: imgs.map((src, i) => ({ src, n: i + 1, ring: i === this.state.img ? '#2020f0' : 'transparent', pick: () => this.setState({ img: i }) })),
+};
+}
+}
+</script>
+</body>
+</html>
